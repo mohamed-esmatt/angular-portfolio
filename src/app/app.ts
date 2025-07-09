@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
+import { Projects } from './pages/projects/projects';
+import { About } from './pages/about/about';
+import { Home } from './pages/home/home';
+import { Contact } from './pages/contact/contact';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [Header, Footer, Projects, About, Home, Contact],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected title = 'my-portofolio';

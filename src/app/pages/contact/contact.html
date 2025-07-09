@@ -1,0 +1,75 @@
+<!-- Contact Section -->
+<section id="contact">
+  <div class="contact container">
+    <div>
+      <h1 class="section-title">Contact <span>info</span></h1>
+    </div>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="icon">
+          <img src="https://img.icons8.com/bubbles/100/000000/phone.png" />
+        </div>
+        <div class="contact-info">
+          <h1>Phone</h1>
+          <h2>+20 115 0773 402</h2>
+          <h2>+20 1060348286</h2>
+        </div>
+      </div>
+
+      <!-- Trigger item -->
+      <div class="contact-item" (click)="openForm()">
+        <div class="icon">
+          <img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" />
+        </div>
+        <div class="contact-info">
+          <h1>Click to send email</h1>
+          <h2>mohamed.esmat75&#64;gmail.com</h2>
+        </div>
+      </div>
+
+      <!-- Email Form modal -->
+      <div class="email-card" *ngIf="showForm">
+        <div class="card-content">
+          <span id="close-card" (click)="closeForm()">&times;</span>
+          <h2>Send me an Email</h2>
+
+          <form (submit)="sendEmail($event)">
+            <input
+              type="text"
+              name="from_name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="from_email"
+              placeholder="Your Email"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+
+          <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+          <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="icon">
+          <img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" />
+        </div>
+        <div class="contact-info">
+          <h1>Address</h1>
+          <h2>NasrCity, Amtdad Rmses 2 , Block 58</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Section -->
