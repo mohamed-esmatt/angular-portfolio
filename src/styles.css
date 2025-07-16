@@ -530,17 +530,16 @@ p {
   /* End Services Section */
 
   /* Project */
+@media screen and (min-width: 768px) {
   #projects .project-item {
     flex-direction: row;
-  }
-  #projects .project-item:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  #projects .project-item {
     height: 400px;
     margin: 0;
     width: 100%;
-    border-radius: 0;
+    /* border-radius: 0; */ /* Remove this line to keep rounded corners */
+  }
+  #projects .project-item:nth-child(even) {
+    flex-direction: row-reverse;
   }
   #projects .all-projects .project-info {
     height: 100%;
@@ -548,6 +547,8 @@ p {
   #projects .all-projects .project-img {
     height: 100%;
   }
+}
+
   /* End Project */
 
   /* About */
