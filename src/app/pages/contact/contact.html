@@ -4,6 +4,8 @@
     <div>
       <h1 class="section-title">Contact <span>info</span></h1>
     </div>
+
+    <!-- Contact cards -->
     <div class="contact-items">
       <div class="contact-item">
         <div class="icon">
@@ -16,47 +18,13 @@
         </div>
       </div>
 
-      <!-- Trigger item -->
-      <div class="contact-item" (click)="openForm()">
+      <div class="contact-item">
         <div class="icon">
           <img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" />
         </div>
         <div class="contact-info">
-          <h1>Click to send email</h1>
+          <h1>Email</h1>
           <h2>mohamed.esmat75&#64;gmail.com</h2>
-        </div>
-      </div>
-
-      <!-- Email Form modal -->
-      <div class="email-card" *ngIf="showForm">
-        <div class="card-content">
-          <span id="close-card" (click)="closeForm()">&times;</span>
-          <h2>Send me an Email</h2>
-
-          <form (submit)="sendEmail($event)">
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Your Email"
-              required
-            />
-            <input type="text" name="subject" placeholder="Subject" required />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit">Send</button>
-          </form>
-
-          <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
-          <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
         </div>
       </div>
 
@@ -69,7 +37,30 @@
           <h2>NasrCity, Amtdad Rmses 2 , Block 58</h2>
         </div>
       </div>
+    </div> <!-- End contact-items -->
+
+    <!-- Move the form here -->
+<div class="styled-form-wrapper">
+      <h2>Send a Message</h2>
+
+      <form (submit)="sendEmail($event)" class="styled-form">
+        <div class="form-left">
+          <input type="text" name="from_name" placeholder="Your name" required />
+          <input type="email" name="from_email" placeholder="Your email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+        </div>
+
+        <div class="form-right">
+          <textarea name="message" id="message" placeholder="Your message" required></textarea>
+          <button type="submit">SEND A MESSAGE</button>
+
+      
+        </div>
+      </form>
+
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
     </div>
+
   </div>
 </section>
-<!-- End Contact Section -->
