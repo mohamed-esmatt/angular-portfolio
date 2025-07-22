@@ -502,7 +502,6 @@ p {
 @keyframes text_reveal_name {
   100% {
     color: crimson;
-    font-weight: 500;
   }
 }
 /* End Keyframes */
